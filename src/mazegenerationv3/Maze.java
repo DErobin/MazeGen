@@ -42,13 +42,13 @@ public class Maze
         for(int i=0; i<roomTries; i++)
         {
             Room r = generateRoom();
-            System.out.println("Room genned. X: " + r.area.x + " Y: " + r.area.y + " X2: " + (r.area.x+r.area.width) + " Y2: " + (r.area.y+r.area.height));
+            //System.out.println("Room genned. X: " + r.area.x + " Y: " + r.area.y + " X2: " + (r.area.x+r.area.width) + " Y2: " + (r.area.y+r.area.height));
             boolean overlap = false;
             for(Room s : finRooms)
             {
                 if(r.OverLapsWith(s))
                 {
-                    System.out.println("Room overlaps");
+                    //System.out.println("Room overlaps");
                     overlap = true;
                 }
             }

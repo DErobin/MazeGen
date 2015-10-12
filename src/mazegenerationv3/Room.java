@@ -18,6 +18,7 @@ public class Room
 {
     public final Rectangle area;
     public int nrOfConnections;
+    public static int roomOffset= 4;
     
     public Room(int x, int y, int w, int h)
     {
@@ -28,7 +29,7 @@ public class Room
     public boolean OverLapsWith(Room roomin)
     {
         Rectangle r = roomin.area;
-        return area.x < r.x + r.width && area.x + area.width > r.x && area.y < r.y + r.height && area.y + area.height > r.y;
+        return area.x < r.x + r.width+roomOffset && area.x + area.width+roomOffset > r.x && area.y < r.y + r.height+roomOffset && area.y + area.height+roomOffset > r.y;
     }
     
     public void AddConnection()
