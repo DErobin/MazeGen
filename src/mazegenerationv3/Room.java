@@ -6,6 +6,9 @@
 package mazegenerationv3;
 
 import java.awt.Rectangle;
+import static java.lang.Math.abs;
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
 
 /**
  *
@@ -14,15 +17,33 @@ import java.awt.Rectangle;
 public class Room 
 {
     public final Rectangle area;
+    public int nrOfConnections;
     
     public Room(int x, int y, int w, int h)
     {
-        area = new Rectangle(x, y, w, h);
+        this.area = new Rectangle(x, y, w, h);
+        this.nrOfConnections = 0;
     }
     
     public boolean OverLapsWith(Room roomin)
     {
         Rectangle r = roomin.area;
         return area.x < r.x + r.width && area.x + area.width > r.x && area.y < r.y + r.height && area.y + area.height > r.y;
+    }
+    
+    public void AddConnection()
+    {
+        this.nrOfConnections++;
+    }
+    
+    public double CalcLength(Room room){
+       double length;
+        
+       double xLength = sqrt(pow((double)room.area.x - (double)this.area.x, 2));
+       double yLength = sqrt(pow((double)room.area.y - (double)this.area.y, 2));
+       
+       length = xLength + yLength;
+       
+       return length;
     }
 }

@@ -17,7 +17,7 @@ public class MazeGenerationv3 {
     public static void main(String[] args) 
     {
         // TODO code application logic here
-        Maze test = new Maze(50, 5, 100);
+        Maze test = new Maze(2000, 5, 100000);
         test.printMaze();
     }
     
